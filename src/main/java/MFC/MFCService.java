@@ -38,6 +38,16 @@ public class MFCService {
                 e.printStackTrace();
             }
         }
+        for (Thread a: futures) {
+
+            try{
+                a.join();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+        }
 
 
         System.out.println("Процент молодых граждан, ушедших без обслуживания: " + window1.countPercentAngryResindent() + "%");
